@@ -23,7 +23,7 @@ public class LinkService {
 
 		String caracteres;
 		String header="https://";
-		String headerServidor="localhost:8080/";
+		String headerServidor="https://zg-avaliacao.herokuapp.com/";
 		StringBuilder codigoUnico;
 		caracteres = "abcdefghijklmnopqrstuvxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 		codigoUnico = new StringBuilder(5);
