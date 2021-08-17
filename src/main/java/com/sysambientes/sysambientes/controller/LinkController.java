@@ -22,7 +22,7 @@ public class LinkController {
 	}
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public void retornaLink(@PathVariable String id,  HttpServletResponse response) throws IOException {
-		String headerServidor="localhost:8080/";
+		String headerServidor="https://zg-avaliacao.herokuapp.com/";
 		Link link = linkService.findbyLinkOriginal(headerServidor+id);
 		link.setQtdDeAcesso(link.getQtdDeAcesso()+1);
 		linkService.update(link);
