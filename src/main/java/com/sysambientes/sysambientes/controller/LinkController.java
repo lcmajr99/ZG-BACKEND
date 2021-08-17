@@ -16,10 +16,13 @@ public class LinkController {
 
 	@Autowired
 	private LinkService linkService;
+
+
 	@RequestMapping(method = RequestMethod.POST)
 	public Link criaLink(@RequestBody Link linkOriginal) {
 		return linkService.create(linkOriginal);
 	}
+
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public void retornaLink(@PathVariable String id,  HttpServletResponse response) throws IOException {
 		String headerServidor="https://zg-avaliacao.herokuapp.com/";
@@ -28,6 +31,7 @@ public class LinkController {
 		linkService.update(link);
 		response.sendRedirect(link.getLinkOriginal());
 	}
+
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<List<Link>> findAll() {
 		List<Link> linkList = linkService.findAll();

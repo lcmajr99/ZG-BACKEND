@@ -23,6 +23,7 @@ public class LinkService {
 
 		String caracteres;
 		String header="https://";
+		String header2="http://";
 		String headerServidor="https://zg-avaliacao.herokuapp.com/";
 		StringBuilder codigoUnico;
 		caracteres = "abcdefghijklmnopqrstuvxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -43,7 +44,7 @@ public class LinkService {
 
 		Link link = new Link();
 
-		if(!linkOriginal.getLinkOriginal().contains(header)){
+		if(!linkOriginal.getLinkOriginal().contains(header) && !linkOriginal.getLinkOriginal().contains(header2)){
 			linkOriginal.setLinkOriginal(header + linkOriginal.getLinkOriginal());
 		}
 		link.setLinkOriginal(linkOriginal.getLinkOriginal());
